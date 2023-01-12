@@ -15,3 +15,5 @@ dacite >= 1.6.0
 PyYAML >= 6.0
 lxml >= 4.6.0
 mmh3 >= 3.0.0
+faker >= 16.3.0
+requests_toolbelt >= 0.10.1
