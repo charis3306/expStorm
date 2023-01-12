@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append("..")
 from pocsuite3.modules.encryption import Encryption
 import requests
 import json
@@ -57,7 +60,7 @@ class GetDnslogHash():
         hashdata = ""
         for hash in self.getHash("charis3389.xyz"):
             hashdata += hash + "\n"
-        with open(r"../../data/hashdata.txt", "w",
+        with open(r"../data/hashdata.txt", "w",
                   encoding="utf-8") as f:
             f.write(hashdata)
 
@@ -69,7 +72,7 @@ class GetDnslogHash():
         path = os.path.expanduser(path)  # 支持linux windows 平台路径
         # 打开从远程获取的hash
         self.outHash()
-        with open(r"../../data/hashdata.txt", "r", encoding="utf-8") as f:
+        with open(r"../data/hashdata.txt", "r", encoding="utf-8") as f:
             hashlistdata = f.readlines()
 
         with open(path, "r",encoding="utf-8") as f:
@@ -86,7 +89,8 @@ class GetDnslogHash():
 if __name__ == '__main__':
     # 实例
 
-    path = r'C:\Users\charis\Documents\GitHub\expStorm\target\host.txt'
+    #path 填写自己需要hash验证的url文件
+    path = r'../target/xxl-job.txt'
     result = GetDnslogHash().createHash(path, "charis3389.xyz")
     for i in result:
         print(i)
