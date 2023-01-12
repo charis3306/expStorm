@@ -1,2 +1,27 @@
 # expStorm
- 集成式漏洞验证工具
+ 基于pocsuite3编写的exp_storm漏洞检测工具
+ 感谢 pocsuite3 
+ https://github.com/knownsec/pocsuite3.git
+## 目前版本只是测试版本
+## 更新日志0.1
+1. 针对无回显poc验证编写了一个接口，此接口可以使用自建dnslog
+2. 目前支持自建dnslog平台 revsuit
+
+## revsuit
+
+项目链接如下：https://github.com/Li4n0/revsuit.git
+
+## 技术细节
+
+针对无回显漏洞，验证通过率为100%！
+1. 针对无回显漏洞验证，使用时间差加hash校验双重校验
+2. 存在漏洞的url转成md5记录到dnslog服务器中，时间差和hash校验完成后，dnslog记录会下发到客户端，随后客户端和服务端再次hash校验方式，再次验证漏洞是否存在误报。
+
+## 优化部分
+
+1. 目前项目没有在其他系统中运行，可能会存在bug
+2. requirements.txt 目前没有测试是否可行
+
+## 希望
+
+希望大家能提交一下高质量的poc，后续有时间会更新一些高质量的poc
