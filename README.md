@@ -1,9 +1,15 @@
 # expStorm
  基于pocsuite3编写的exp_storm漏洞检测工具
  感谢 pocsuite3 
+
  https://github.com/knownsec/pocsuite3.git
-## 目前版本只是测试版本
-## 更新日志0.1
+## 目前版本
+支持 windows linux 平台
+
+使用方法
+
+```pip3 install -r requirements.txt```
+## 更新日志0.1.1
 1. 针对无回显poc验证编写了一个接口，此接口可以使用自建dnslog
 2. 目前支持自建dnslog平台 revsuit
 
