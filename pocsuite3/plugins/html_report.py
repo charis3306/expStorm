@@ -136,13 +136,10 @@ class HtmlExport:
 
     def write_html(self, results=None):
         menus = {
-            'Site': 'https://pocsuite.org',
-            'Seebug': 'https://www.seebug.org',
-            'Help': 'https://github.com/knownsec/pocsuite3/blob/master/docs/CODING.md',
-            'Bug report': 'https://github.com/knownsec/pocsuite3/issues',
+            'Site': 'http://www.charis3306.top/',
         }
         self._write_header()
-        self._write_navbar(name='Pocsuite3', menus=menus)
+        self._write_navbar(name='expStorm', menus=menus)
         self.html.main(role_="main", class_='container')
         self.write_results(results)
         self.html.main.close()
