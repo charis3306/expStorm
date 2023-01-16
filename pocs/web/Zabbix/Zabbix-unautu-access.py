@@ -71,7 +71,7 @@ class DemoPOC(POCBase):
             result['VerifyInfo'] = {}
             result['VerifyInfo']['URL'] = p[0]
             result['VerifyInfo']['payload'] = p[1]
-            result['VerifyInfo']['allurl'] = p[2]
+            result['VerifyInfo']['Vulnerability-address'] = p[2]
         return self.parse_output(result)
 
         def _attack(self):
