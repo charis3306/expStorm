@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 python3 expStorm.py -h
 ```
 
-注意：请配置tools目录和pocsuite3\modules\dnslog\__ini__.py目录下token 和api接口 用于无回显漏洞检测。
+注意：请配置tools目录和pocsuite3\modules\dnslog\__ini__.py目录下revsuit的token 和api接口 用于无回显漏洞检测。
 
 ```commandline
 
