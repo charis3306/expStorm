@@ -10,13 +10,13 @@ import re
 # 时间 2023-01-01
 # 注意 服务端配置要和客户端一致
 
-class Dnslog:
+class Dnslog():
 
     # 初始化，设置token, api
     def __init__(self):
 
         self.headers = {
-            "Cookie": "token=Kiss3389"
+            "Cookie": "token="
         }
 
         self.api = "http://ns1.charis3306.xyz:7001/revsuit/api/record/dns?page=1&pageSize=10&order=desc"
@@ -53,4 +53,4 @@ class Dnslog:
                 pass
 
 if __name__ == '__main__':
-    print(Dnslog().getDns("http://www.baidu.com", "charis3389.xyz"))
+    print(Dnslog().getDns("http://www.exp.com", "charis3389.xyz"))

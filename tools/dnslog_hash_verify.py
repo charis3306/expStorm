@@ -18,7 +18,7 @@ class GetDnslogHash():
     def __init__(self):
         # 定义token
         self.headers = {
-            "Cookie": "token=Kiss3389"
+            "Cookie": "token="
         }
 
     # 根据页数返回需要的值
@@ -56,9 +56,9 @@ class GetDnslogHash():
         return dnslist
 
     # 全部hash保存到文件中，加快比较速度
-    def outHash(self):
+    def outHash(self, domain):
         hashdata = ""
-        for hash in self.getHash("charis3389.xyz"):
+        for hash in self.getHash(domain):
             hashdata += hash + "\n"
         with open(r"../data/hashdata.txt", "w",
                   encoding="utf-8") as f:
@@ -71,7 +71,7 @@ class GetDnslogHash():
         path = repr(path).replace("\\\\", "\\").replace("'", "")  # 参入的参数进行原格式防止被转义
         path = os.path.expanduser(path)  # 支持linux windows 平台路径
         # 打开从远程获取的hash
-        self.outHash()
+        self.outHash(domain)
         with open(r"../data/hashdata.txt", "r", encoding="utf-8") as f:
             hashlistdata = f.readlines()
 

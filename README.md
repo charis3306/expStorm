@@ -13,6 +13,18 @@ pip3 install -r requirements.txt
 python3 expStorm.py -h
 ```
 
+注意：请配置tools目录和pocsuite3\modules\dnslog\__ini__.py目录下token 和api接口 用于无回显漏洞检测。
+
+```commandline
+
+def __init__(self):
+    # 定义token
+    self.headers = {
+        "Cookie": "token="
+    }
+```
+
+
 ## 更新日志0.1.1
 1. 针对无回显poc验证编写了一个接口，此接口可以使用自建dnslog
 2. 目前支持自建dnslog平台 revsuit
