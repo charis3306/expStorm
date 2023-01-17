@@ -26,9 +26,9 @@ def __init__(self):
 
 例如：探测xxl-job未授权rec漏洞
 
-
+使用10线程对指定xxl-job.txt文件内的资产进行测试并输入html格式
 ```commandline
-python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\xxl-job.txt --domain "charis3389.xyz" --threads 10
+python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\xxl-job.txt --domain "charis3389.xyz" --threads 10 --plugins .\pocsuite3\plugins\html_report.py
 ```
 
 
