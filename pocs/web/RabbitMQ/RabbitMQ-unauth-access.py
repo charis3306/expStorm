@@ -1,7 +1,7 @@
 """
 作者 charis
 时间 2023-1-19
-注意 次poc使用的是默认账户guest/guest进行测试，没有弱口令探测功能
+注意 poc使用的是默认账户guest/guest进行测试，没有弱口令探测功能
 """
 import time
 import re
