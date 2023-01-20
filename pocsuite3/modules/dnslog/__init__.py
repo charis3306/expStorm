@@ -10,7 +10,7 @@ import re
 # 时间 2023-01-01
 # 注意 服务端配置要和客户端一致
 
-class Dnslog():
+class Dnslog:
 
     # 初始化，设置token, api
     def __init__(self):

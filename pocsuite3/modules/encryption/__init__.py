@@ -3,7 +3,7 @@
 # 时间 2023-1-1
 
 import hashlib
-class Encryption():
+class Encryption:
     # 定义md5加密
     def md5(self, string):
         md5 = hashlib.md5()

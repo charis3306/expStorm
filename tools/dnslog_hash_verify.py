@@ -13,7 +13,7 @@ import os
 # 首先使用后时间差+hash校验，校验完成后，用此模块来定位资产
 
 
-class GetDnslogHash():
+class GetDnslogHash:
 
     def __init__(self):
         # 定义token
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     # 实例
 
     #path 填写自己需要hash验证的url文件
-    path = r'../target/xxl-job.txt'
+    path = r'../target/url.txt'
     result = GetDnslogHash().createHash(path, "charis3389.xyz")
     for i in result:
         print(i)
