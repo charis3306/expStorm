@@ -3,7 +3,7 @@ from socket import getaddrinfo
 from lxml import etree
 requests.packages.urllib3.disable_warnings()
 
-# 功能 dnslog 备案查询
+# 功能 备案查询模块
 # 作者 周佳豪
 # 时间 2023-01-19
 
@@ -26,7 +26,7 @@ class getICP:
         lenNum = len(self.domin) // 2
 
         if "http" in self.domin[:lenNum] or "www" in self.domin[:lenNum]:
-            self.domin = self.domin.replace("https://",'').replace('www.','').replace('https:\\\\','').replace('/','')
+            self.domin = self.domin.replace("https://", '').replace('www.', '').replace('https:\\\\', '').replace('/', '')
             return False
 
         if self.domin[-1].isdigit():
@@ -39,7 +39,7 @@ class getICP:
         try:
             req = requests.get(url=f"https://api.vvhan.com/api/icp?url={self.domin}", headers=self.header, timeout=20)
             if req.status_code != 200:
-                return ("超时",False)
+                return ("超时", False)
 
             if len(req.json()) != 2 :
                 return (req.json()["info"]["name"], req.json()["info"]["nature"], req.json()["info"]["title"],req.json()["info"]["icp"],True)
@@ -51,17 +51,16 @@ class getICP:
                     try:
                         return (self.ipToDomin(getaddrinfo(self.domin, 'http')[0][4][0]), False)
                     except:
-                        print(111111)
                         print(self.domin)
                         return (getaddrinfo(self.domin, 'http')[0][4][0], False)
                 except:
-                    return ("此域名未备案 且 ip获取失败",False)
+                    return ("此域名未备案 且 ip获取失败", False)
 
         except Exception as e:
             return ("程序异常",False)
 
 
-    def ipToDomin(self, ip):
+    def ipToDomin(self, ip) -> tuple:
         headers = {
             "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
             #     "Connection": "close"  数据量传输慢 不可立马关闭socket通道
@@ -92,6 +91,16 @@ class getICP:
         return str(self.result)
 
 
+
 if __name__ == '__main__':
-    print(getICP(getICP("180.101.50.172")))
+    # 实例：
+    with open("", "r") as f:
+        for i in f.readlines():
+            print(getICP(i.strip("\n")))
+
+
+
+
+
+
 
