@@ -47,6 +47,7 @@ python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\
 2. 存在漏洞的url转成md5记录到dnslog服务器中，时间差和hash校验完成后，dnslog记录会下发到客户端，随后客户端和服务端再次hash校验方式，再次验证漏洞是否存在误报。
 
 
+
 ## 联系我
 
 CHARIS3306@OUTLOOK.COM 
