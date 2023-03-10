@@ -46,15 +46,6 @@ python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\
 1. 针对无回显漏洞验证，使用时间差加hash校验双重校验
 2. 存在漏洞的url转成md5记录到dnslog服务器中，时间差和hash校验完成后，dnslog记录会下发到客户端，随后客户端和服务端再次hash校验方式，再次验证漏洞是否存在误报。
 
-## 更新预告
-
-1. 后面会增加Spring 系列漏洞
-2. 后面会增加log4j2 系列漏洞
-3. 后面会增加fastjson 系列漏洞
-
-## 希望
-
-希望大家能提交一下高质量的poc，后续有时间会更新一些高质量的poc
 
 ## 联系我
 
