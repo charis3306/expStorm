@@ -36,6 +36,8 @@ python .\expStorm.py -r .\pocs\web\XXL-JOB\xxl-job-unauth-access.py -f .\target\
 1. 针对无回显poc验证编写了一个接口，此接口可以使用自建dnslog
 2. 目前支持自建dnslog平台 revsuit
 
+# 该项目不在维护，会重新构建新的项目。
+
 ## revsuit
 
 项目链接如下：https://github.com/Li4n0/revsuit.git
