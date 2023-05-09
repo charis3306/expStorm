@@ -3,7 +3,7 @@
  感谢 pocsuite3 
 
  https://github.com/knownsec/pocsuite3.git
-# 该项目不在维护，会重新构建新的项目。
+# 该项目将不会维护，会重新构建新的项目。
 ## 目前版本
 支持 windows linux 平台
 
