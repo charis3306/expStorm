@@ -91,6 +91,6 @@ if __name__ == '__main__':
 
     #path 填写自己需要hash验证的url文件
     path = r'../target/url.txt'
-    result = GetDnslogHash().createHash(path, "charis3389.top")
+    result = GetDnslogHash().createHash(path, "charis3306.top")
     for i in result:
         print(i)
