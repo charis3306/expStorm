@@ -53,4 +53,4 @@ class Dnslog:
                 pass
 
 if __name__ == '__main__':
-    print(Dnslog().getDns("http://www.exp.com", "charis3389.xyz"))
+    print(Dnslog().getDns("http://www.exp.com", "charis3306.top"))
