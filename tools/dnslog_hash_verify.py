@@ -23,7 +23,7 @@ class GetDnslogHash:
 
     # 根据页数返回需要的值
     def getHashpage(self, page):
-        api = f"http://ns1.charis3306.xyz:7001/revsuit/api/record/dns?page={page}&pageSize=10&order=desc"
+        api = f"http://ns1.charis3306.top:7001/revsuit/api/record/dns?page={page}&pageSize=10&order=desc"
         r = requests.get(api, headers=self.headers)
         dictdata = json.loads(r.text)
         return dictdata
@@ -31,7 +31,7 @@ class GetDnslogHash:
 
     #返回全部数据的数量
     def getDnslogcount(self):
-        api = f"http://ns1.charis3306.xyz:7001/revsuit/api/record/dns?page=1&pageSize=1&order=desc"
+        api = f"http://ns1.charis3306.top:7001/revsuit/api/record/dns?page=1&pageSize=1&order=desc"
         r = requests.get(api, headers=self.headers)
         dictdata = json.loads(r.text)
         count = dictdata['result']['count']
@@ -91,6 +91,6 @@ if __name__ == '__main__':
 
     #path 填写自己需要hash验证的url文件
     path = r'../target/url.txt'
-    result = GetDnslogHash().createHash(path, "charis3389.xyz")
+    result = GetDnslogHash().createHash(path, "charis3389.top")
     for i in result:
         print(i)
