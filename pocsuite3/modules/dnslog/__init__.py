@@ -19,7 +19,7 @@ class Dnslog:
             "Cookie": "token="
         }
 
-        self.api = "http://ns1.charis3306.xyz:7001/revsuit/api/record/dns?page=1&pageSize=10&order=desc"
+        self.api = "http://ns1.charis3306.top:7001/revsuit/api/record/dns?page=1&pageSize=10&order=desc"
 
 
     def getDns(self, url, domain):
